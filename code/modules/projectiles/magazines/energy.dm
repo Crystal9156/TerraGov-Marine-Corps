@@ -59,9 +59,6 @@
 	charge_amount = 25 // 10%, 2 shots
 	charge_delay = 2 SECONDS
 
-/obj/item/cell/lasgun/update_icon()
-	return FALSE
-
 /obj/item/cell/lasgun/lasrifle
 	name = "\improper Terra Experimental standard battery"
 	desc = "A specialized high density battery used to power most standard marine laser guns. It is simply known as the TE power cell."
@@ -74,7 +71,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/cell/lasgun/lasrifle/update_icon()
+/obj/item/cell/lasgun/lasrifle/update_icon_state()
 	var/remaining = CEILING((charge / max(maxcharge, 1)) * 100, 25)
 	icon_state = "[base_ammo_icon]_[remaining]"
 
