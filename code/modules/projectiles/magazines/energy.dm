@@ -74,7 +74,7 @@
 	. = ..()
 	update_icon()
 
-/obj/item/cell/lasgun/lasrifle/update_icon_state()
+/obj/item/cell/lasgun/lasrifle/update_icon()
 	var/remaining = CEILING((charge / max(maxcharge, 1)) * 100, 25)
 	icon_state = "[base_ammo_icon]_[remaining]"
 
